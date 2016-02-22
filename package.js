@@ -12,6 +12,10 @@ Package.onUse(function(api){
   ]);
 
   api.addFiles([
+    'permissions.coffee'
+  ], 'server');
+
+  api.addFiles([
     'user.coffee'
   ]);
 });
