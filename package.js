@@ -6,6 +6,7 @@ Package.describe({
 
 Package.onUse(function(api){
   api.use([
+    'meteor-platform',
     'accounts-base',
     'service-configuration',
     'coffeescript',
@@ -14,7 +15,7 @@ Package.onUse(function(api){
 
   api.addFiles([
     'client/init.coffee'
-  ]);
+  ], 'client');
 
   api.addFiles([
     'server/init.coffee',
