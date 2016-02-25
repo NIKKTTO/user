@@ -10,6 +10,7 @@ Package.onUse(function(api){
     'accounts-base',
     'service-configuration',
     'coffeescript',
+    'alanning:roles',
     'aldeed:simple-schema'
   ]);
 
@@ -19,6 +20,7 @@ Package.onUse(function(api){
 
   api.addFiles([
     'server/init.coffee',
+    'server/publish.coffee',
     'server/permissions.coffee'
   ], 'server');
 
