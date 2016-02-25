@@ -15,10 +15,11 @@ pbAuth = ->
         expires: 20000
         path: '/'
 
-Tracker.autorun ->
-  u = Meteor.user()
-  if u?
-    pbAuth()
-  else
-    $.removeCookie Meteor.settings.public.auth.cookie,
-      domain: Meteor.settings.public.auth.domain
+Meteor.startup ->
+  Tracker.autorun ->
+    u = Meteor.user()
+    if u?
+      pbAuth()
+    else
+      $.removeCookie Meteor.settings.public.auth.cookie,
+        domain: Meteor.settings.public.auth.domain
