@@ -7,6 +7,7 @@ Package.describe({
 Package.onUse(function(api){
   api.use([
     'accounts-base',
+    'service-configuration',
     'coffeescript',
     'aldeed:simple-schema'
   ]);
