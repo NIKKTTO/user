@@ -1,6 +1,6 @@
 @Schema ?= {}
 
-UserProfileSchema = new SimpleSchema
+Schema.userProfile = new SimpleSchema
   firstName:
     type: String
     min: 2
@@ -28,7 +28,7 @@ UserProfileSchema = new SimpleSchema
     optional: true
 
 
-UserEmailSchema = new SimpleSchema
+Schema.userEmail = new SimpleSchema
   address:
     label: 'Email'
     regEx: SimpleSchema.RegEx.Email
@@ -51,13 +51,13 @@ Schema.user = new SimpleSchema
     type: String
     optional: true
   emails:
-    type: [UserEmailSchema]
+    type: [Schema.userEmail]
     optional: true
   createdAt:
     type: Date
   profile:
     optional: true
-    type: UserProfileSchema
+    type: Schema.userProfile
   roles:
     type: [String]
     optional: true
