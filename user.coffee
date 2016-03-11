@@ -14,8 +14,16 @@ Schema.userProfile = new SimpleSchema
   name:
     type: String
     optional: true
-  phone:
+  address1:
     type: String
+    optional: true
+  address2:
+    type: String
+    optional: true
+  phone:
+    label: 'Phone number'
+    type: String
+    regEx: /[0-9 ]*/
     optional: true
   terms:
     type: Boolean
@@ -41,6 +49,10 @@ Schema.user = new SimpleSchema
   _id:
     type: String
     optional: true
+  cards:
+    defaultValue: []
+    type: [Object]
+    blackbox: true
   stripeCharges:
     type: [String]
     optional: true
