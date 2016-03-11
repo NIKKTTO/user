@@ -47,6 +47,9 @@ Schema.user = new SimpleSchema
   stripeProcessing:
     type: Boolean
     optional: true
+  subscriptionId:
+    type: String
+    optional: true
   stripeId:
     type: String
     optional: true

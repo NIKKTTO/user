@@ -6,14 +6,19 @@ pbAuth = ->
       domain: Meteor.settings.public.auth.domain
       expires: 20000
       path: '/'
-  if Roles.userIsInRole(u, 'admin')
-    Meteor.call 'stagingAuth', (e, r) ->
-      if e?
-        return setTimeout pbAuth, 1000
-      $.cookie 'stagingAuth', r,
-        domain: 'nikktto.com'
-        expires: 20000
-        path: '/'
+    if Roles.userIsInRole(u, 'admin')
+      Meteor.call 'stagingAuth', (e, r) ->
+        if e?
+          return setTimeout pbAuth, 1000
+        $.cookie 'stagingAuth', r,
+          domain: 'nikktto.com'
+          expires: 20000
+          path: '/'
+        if location.hash is '#builder'
+          location.href = Meteor.settings.public.builderAddress
+    else if location.hash is '#builder'
+      location.href = Meteor.settings.public.builderAddress
+      
 
 Meteor.startup ->
   Tracker.autorun ->
