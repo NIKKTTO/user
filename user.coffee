@@ -1,6 +1,6 @@
 @Schema ?= {}
 
-UserProfileSchema = new SimpleSchema
+Schema.userProfile = new SimpleSchema
   firstName:
     type: String
     min: 2
@@ -14,8 +14,16 @@ UserProfileSchema = new SimpleSchema
   name:
     type: String
     optional: true
-  phone:
+  address1:
     type: String
+    optional: true
+  address2:
+    type: String
+    optional: true
+  phone:
+    label: 'Phone number'
+    type: String
+    regEx: /[0-9 ]*/
     optional: true
   terms:
     type: Boolean
@@ -28,7 +36,7 @@ UserProfileSchema = new SimpleSchema
     optional: true
 
 
-UserEmailSchema = new SimpleSchema
+Schema.userEmail = new SimpleSchema
   address:
     label: 'Email'
     regEx: SimpleSchema.RegEx.Email
@@ -41,6 +49,10 @@ Schema.user = new SimpleSchema
   _id:
     type: String
     optional: true
+  cards:
+    defaultValue: []
+    type: [Object]
+    blackbox: true
   stripeCharges:
     type: [String]
     optional: true
@@ -54,13 +66,13 @@ Schema.user = new SimpleSchema
     type: String
     optional: true
   emails:
-    type: [UserEmailSchema]
+    type: [Schema.userEmail]
     optional: true
   createdAt:
     type: Date
   profile:
     optional: true
-    type: UserProfileSchema
+    type: Schema.userProfile
   roles:
     type: [String]
     optional: true
