@@ -2,10 +2,10 @@ pbAuth = ->
   u = Meteor.user()
   mlt = $.cookie 'meteor_login_token'
   if mlt? and Meteor.settings.public.auth
-    $.cookie Meteor.settings.public.auth.cookie, mlt,
-      domain: Meteor.settings.public.auth.domain
-      expires: 20000
-      path: '/'
+    # $.cookie Meteor.settings.public.auth.cookie, mlt,
+    #   domain: Meteor.settings.public.auth.domain
+    #   expires: 20000
+    #   path: '/'
     if Roles.userIsInRole(u, 'admin')
       Meteor.call 'stagingAuth', (e, r) ->
         if e?
