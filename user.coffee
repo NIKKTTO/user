@@ -11,6 +11,9 @@ Schema.userProfile = new SimpleSchema
     min: 2
     max: 25
     optional: true
+  couponCode:
+    type: String
+    optional: true
   name:
     type: String
     optional: true
@@ -57,7 +60,7 @@ Schema.user = new SimpleSchema
     type: [String]
     optional: true
   stripeProcessing:
-    type: Boolean
+    type: Date
     optional: true
   subscriptionId:
     type: String
