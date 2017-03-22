@@ -37,6 +37,9 @@ Schema.userProfile = new SimpleSchema
   upgraded:
     type: Date
     optional: true
+  billing:
+    type: Object
+    blackbox: true
 
 
 Schema.userEmail = new SimpleSchema
