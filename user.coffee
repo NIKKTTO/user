@@ -76,8 +76,7 @@ Schema.user = new SimpleSchema
     optional: true
   emails:
     type: [Schema.userEmail]
-    minCount: 1
-    # optional: true
+    optional: true
   createdAt:
     type: Date
   profile:
