@@ -47,6 +47,9 @@ Schema.userEmail = new SimpleSchema
   verified:
     type: Boolean
     optional: true
+  invalid:
+    type: Boolean
+    optional: true
 
 Schema.user = new SimpleSchema
   _id:
