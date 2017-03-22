@@ -37,6 +37,9 @@ Schema.userProfile = new SimpleSchema
   upgraded:
     type: Date
     optional: true
+  billing:
+    type: Object
+    blackbox: true
 
 
 Schema.userEmail = new SimpleSchema
@@ -45,6 +48,9 @@ Schema.userEmail = new SimpleSchema
     regEx: SimpleSchema.RegEx.Email
     type: String
   verified:
+    type: Boolean
+    optional: true
+  invalid:
     type: Boolean
     optional: true
 
