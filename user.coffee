@@ -42,13 +42,15 @@ Schema.userProfile = new SimpleSchema
     optional: true
     type: Object
 
-
 Schema.userEmail = new SimpleSchema
   address:
     label: 'Email'
     regEx: SimpleSchema.RegEx.Email
     type: String
   verified:
+    type: Boolean
+    optional: true
+  invalid:
     type: Boolean
     optional: true
 
