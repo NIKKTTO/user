@@ -37,6 +37,10 @@ Schema.userProfile = new SimpleSchema
   upgraded:
     type: Date
     optional: true
+  billing:
+    blackbox: true
+    optional: true
+    type: Object
 
 
 Schema.userEmail = new SimpleSchema
@@ -91,6 +95,9 @@ Schema.user = new SimpleSchema
     optional: true
   referrals:
     type: [String]
+    optional: true
+  restricted:
+    type: Boolean
     optional: true
   nReferralsPaid:
     type: Number

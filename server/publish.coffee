@@ -10,4 +10,5 @@ Meteor.publish 'me', ->
       'services.twitter.screenName': 1
       'services.facebook.name': 1
       hidden: 1
+      restricted: 1
       stripeId: 1
