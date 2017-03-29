@@ -101,6 +101,12 @@ Schema.user = new SimpleSchema
   restricted:
     type: Boolean
     optional: true
+  lineQueuedAt:
+    type: Date
+    optional: true
+  linePosition:
+    type: Number
+    optional: true
   nReferralsPaid:
     type: Number
     optional: true
