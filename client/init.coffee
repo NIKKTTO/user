@@ -1,6 +1,7 @@
 pbAuth = ->
   u = Meteor.user()
   mlt = $.cookie 'meteor_login_token'
+  console.log(u, mlt)
   if mlt? and Meteor.settings.public.auth
     $.cookie Meteor.settings.public.auth.cookie, mlt,
       domain: Meteor.settings.public.auth.domain
@@ -11,14 +12,18 @@ pbAuth = ->
         if e?
           return setTimeout pbAuth, 1000
         $.cookie 'stagingAuth', r,
-          domain: 'nikktto.com'
+          domain: Meteor.settings.public.auth.domain
           expires: 20000
           path: '/'
-        if location.hash is '#builder'
-          location.href = Meteor.settings.public.builderAddress
-    else if location.hash is '#builder'
+        $.cookie 'staging2Auth', r,
+          domain: Meteor.settings.public.auth.domain
+          expires: 20000
+          path: '/'
+    if location.hash is '#builder'
       location.href = Meteor.settings.public.builderAddress
-      
+    if location.hash is '#builder2'
+      location.href = Meteor.settings.public.builder2Address
+
 
 Meteor.startup ->
   Tracker.autorun ->
