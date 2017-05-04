@@ -1,7 +1,6 @@
 pbAuth = ->
   u = Meteor.user()
   mlt = $.cookie 'meteor_login_token'
-  console.log(u, mlt)
   if mlt? and Meteor.settings.public.auth
     $.cookie Meteor.settings.public.auth.cookie, mlt,
       domain: Meteor.settings.public.auth.domain
