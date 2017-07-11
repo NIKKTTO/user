@@ -13,3 +13,10 @@ Meteor.publish 'me', ->
       restricted: 1
       linePosition: 1
       stripeId: 1
+      disabled: 1
+
+Meteor.publish 'user', (userId) ->
+  if @userId and userId and (users = Meteor.users.find(userId)).fetch().length and (userId is @userId or Roles.userIsInRole(@userId, 'admin'))
+    users = Meteor.users.find(userId)
+    return users
+  else return []
