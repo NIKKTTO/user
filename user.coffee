@@ -1,5 +1,28 @@
 @Schema ?= {}
 
+Schema.address = new SimpleSchema
+  street:
+    type: String
+    max: 100
+    optional: true
+  city:
+    type: String
+    max: 50
+    optional: true
+  state:
+    type: String
+    optional: true
+  apartmentNumber:
+    type: String
+    optional: true
+  zipCode:
+    type: String
+    regEx: /^[0-9]{5}$/
+    optional: true
+  country:
+    type: String
+    optional: true
+
 Schema.userProfile = new SimpleSchema
   firstName:
     type: String
@@ -18,10 +41,10 @@ Schema.userProfile = new SimpleSchema
     type: String
     optional: true
   address1:
-    type: String
+    type: Schema.address
     optional: true
   address2:
-    type: String
+    type: Schema.address
     optional: true
   phone:
     label: 'Phone number'
@@ -79,6 +102,9 @@ Schema.user = new SimpleSchema
     optional: true
   createdAt:
     type: Date
+  renewedAt:
+    type: Date
+    optional: true
   profile:
     optional: true
     type: Schema.userProfile
@@ -124,6 +150,9 @@ Schema.user = new SimpleSchema
     optional: true
   text:
     type: String
+    optional: true
+  disabled:
+    type: Boolean
     optional: true
 
 Meteor.users.attachSchema Schema.user
