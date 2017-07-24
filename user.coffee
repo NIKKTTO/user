@@ -77,6 +77,16 @@ Schema.userEmail = new SimpleSchema
     type: Boolean
     optional: true
 
+Schema.referral = new SimpleSchema
+  recipient:
+    type: String
+  sentAt:
+    type: Date
+    optional: true
+  completedAt:
+    type: Date
+    optional: true
+
 Schema.user = new SimpleSchema
   _id:
     type: String
@@ -121,8 +131,11 @@ Schema.user = new SimpleSchema
   nReferrals:
     type: Number
     optional: true
+  # referrals:
+  #   type: [String]
+  #   optional: true
   referrals:
-    type: [String]
+    type: [Schema.referral]
     optional: true
   restricted:
     type: Boolean
@@ -136,8 +149,11 @@ Schema.user = new SimpleSchema
   nReferralsPaid:
     type: Number
     optional: true
+  # referralsPaid:
+  #   type: [String]
+  #   optional: true
   referralsPaid:
-    type: [String]
+    type: [Schema.referral]
     optional: true
   source:
     type: String
