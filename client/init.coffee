@@ -6,7 +6,7 @@ pbAuth = ->
       domain: Meteor.settings.public.auth.domain
       expires: 20000
       path: '/'
-    if !window.PageBuilder and Roles.userIsInRole(u, 'admin')
+    if !window.PageBuilder and Roles.userIsInRole(u, 'accessStaging')
       Meteor.call 'stagingAuth', (e, r) ->
         if e?
           return setTimeout pbAuth, 1000
