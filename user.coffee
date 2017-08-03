@@ -87,6 +87,16 @@ Schema.referral = new SimpleSchema
     type: Date
     optional: true
 
+Schema.reward = new SimpleSchema
+  recipient:
+    type: String
+  sentAt:
+    type: Date
+    optional: true
+  completedAt:
+    type: Date
+    optional: true
+
 Schema.user = new SimpleSchema
   _id:
     type: String
@@ -136,6 +146,9 @@ Schema.user = new SimpleSchema
   #   optional: true
   referrals:
     type: [Schema.referral]
+    optional: true
+  rewards:
+    type: [Schema.reward]
     optional: true
   restricted:
     type: Boolean
