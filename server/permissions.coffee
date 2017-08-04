@@ -5,4 +5,22 @@
 
 Meteor.users.allow
   update: (userId, doc, fields) ->
-    (doc._id is userId and !hasAnyFields(['roles', 'restricted', 'disabled'], fields))# or Roles.userIsInRole userId, ['admin']
+    (doc._id is userId and !hasAnyFields([
+      'roles'
+      'restricted'
+      'disabled'
+      'subscriptionId'
+      'renewedAt'
+      'stripeCharges'
+      'stripeProcessing'
+      'referrer'
+      'nReferrals'
+      'nReferralsPaid'
+      'referrals'
+      'referralsPaid'
+      'rewards'
+      'lineQueuedAt'
+      'linePosition'
+      'hidden'
+      'createdAt'
+    ], fields))# or Roles.userIsInRole userId, ['admin']
