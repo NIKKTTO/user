@@ -7,6 +7,7 @@ Meteor.publish 'me', ->
     fields:
       cards: 1
       emails: 1
+      createdAt: 1
       'services.twitter.screenName': 1
       'services.facebook.name': 1
       hidden: 1
