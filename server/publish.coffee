@@ -15,6 +15,9 @@ Meteor.publish 'me', ->
       linePosition: 1
       stripeId: 1
       disabled: 1
+      referrals: 1
+      referralsPaid: 1
+      referrer: 1
 
 # Meteor.publish 'user', (userId) ->
 #   if @userId and userId and (users = Meteor.users.find(userId)).fetch().length and (userId is @userId or Roles.userIsInRole(@userId, 'admin'))

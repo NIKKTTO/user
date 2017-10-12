@@ -68,7 +68,7 @@ Schema.userProfile = new SimpleSchema
 Schema.userEmail = new SimpleSchema
   address:
     label: 'Email'
-    regEx: SimpleSchema.RegEx.Email
+    regEx: /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i
     type: String
   verified:
     type: Boolean
