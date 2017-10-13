@@ -23,4 +23,5 @@ Meteor.users.allow
       'linePosition'
       'hidden'
       'createdAt'
+      'coins'
     ], fields))# or Roles.userIsInRole userId, ['admin']

@@ -101,6 +101,9 @@ Schema.user = new SimpleSchema
   _id:
     type: String
     optional: true
+  coins:
+    type: Number
+    defaultValue: 0
   cards:
     defaultValue: []
     type: [Object]

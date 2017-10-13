@@ -18,6 +18,7 @@ Meteor.publish 'me', ->
       referrals: 1
       referralsPaid: 1
       referrer: 1
+      coins: 1
 
 # Meteor.publish 'user', (userId) ->
 #   if @userId and userId and (users = Meteor.users.find(userId)).fetch().length and (userId is @userId or Roles.userIsInRole(@userId, 'admin'))
