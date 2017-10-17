@@ -80,6 +80,8 @@ Schema.userEmail = new SimpleSchema
 Schema.referral = new SimpleSchema
   recipient:
     type: String
+  email:
+    type: String
   sentAt:
     type: Date
     optional: true
