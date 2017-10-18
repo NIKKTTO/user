@@ -64,6 +64,15 @@ Schema.userProfile = new SimpleSchema
     blackbox: true
     optional: true
     type: Object
+  skills:
+    type: String
+    optional: true
+  bio:
+    type: String
+    optional: true
+  website:
+    type: String
+    optional: true
 
 Schema.userEmail = new SimpleSchema
   address:
