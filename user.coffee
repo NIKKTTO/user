@@ -166,7 +166,7 @@ Schema.user = new SimpleSchema
     optional: true
   restricted:
     type: Boolean
-    optional: true
+    optional: false
   lineQueuedAt:
     type: Date
     optional: true
